@@ -1,41 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import logo from "../../assets/shaty.png";
 
 const Navbar = () => {
+	const links = [
+		{ name: "Home", link: "homepage" },
+		{ name: "Our Services", link: "/services" },
+		{ name: "Find Doctor", link: "/findadoctor" },
+		{ name: "Signup", link: "/signup" },
+		{ name: "Login", link: "/login" },
+		{ name: "Blog", link: "/healthblog" },
+		{ name: "Location", link: "/location" },
+	];
+	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<div className='header'>
-			<nav className='navbar'>
-				<div className='logo'>
-					<Link to='/'>
-						<img src='./../../assets/images/shaty.png' alt='shatylogo' />
-					</Link>
-				</div>
-				<ul className='nav-links'>
-					<li className='nav-items'>
-						<Link to='/homepage'>Home</Link>
-					</li>
-					<li className='nav-items'>
-						<Link to='/services'>Our Services</Link>
-					</li>
-					<li className='nav-items'>
-						<Link to='/findadoctor'>Find A Doctor</Link>
-					</li>
-					<li className='nav-items'>
-						<Link to='/signup'>Sign up</Link>
-					</li>
-					<li className='nav-items'>
-						<Link to='/login'>Log in</Link>
-					</li>
-					<li className='nav-items'>
-						<Link to='/healthblog'>Health Blog</Link>
-					</li>
-					<li className='nav-items'>
-						<Link to='/location'>Location</Link>
-					</li>
+		<header className='fixed  w-screen top-0 left-0 bg-green shadow-md overflow-auto '>
+			<nav className='flex items-center justify-between px-10 py-0'>
+				<img src={logo} alt='shaty logo' className='w-20 ht-20' />
+				<button
+					onClick={() => setIsOpen(!isOpen)}
+					className='text-3xl absolute right-5 top-6 cursor-pointer md:hidden'
+				>
+					<ion-icon name={isOpen ? "close" : "menu"}></ion-icon>
+				</button>
+				<ul
+					className={`md:flex md:items-center md:pb-0  absolute md:static bg-white md:z-auto z-[-100] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+						isOpen ? "top-20 " : "top-[-490px]"
+					}`}
+				>
+					{links.map((link) => (
+						<li key={link.name} className='md:ml-8 text-xl md:my-0 my-5'>
+							<Link
+								to={link.link}
+								className='text-gray-800 hover:text-gray-400 duration-500'
+							>
+								{link.name}
+							</Link>
+						</li>
+					))}
 				</ul>
 			</nav>
-		</div>
+		</header>
 	);
 };
 

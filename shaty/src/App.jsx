@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import "./index.css";
 import {
 	Findadoctor,
 	Healthblog,
@@ -16,7 +17,7 @@ const App = () => {
 		<BrowserRouter>
 			<NavBar />
 			<Routes>
-				<Route exact path='/' element={<Homepage />} />
+				<Route exact path='/homepage' element={<Homepage />} />
 				<Route exact path='/services' element={<Ourservices />} />
 				<Route exact path='/findadoctor' element={<Findadoctor />} />
 				<Route exact path='/signup' element={<Signup />} />
