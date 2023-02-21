@@ -9,6 +9,10 @@ import "./Homepage.css";
 import Speciality from "./Speciality";
 import doctorsData from "./doctorsData";
 import Benefits from "./Benefits";
+import who from "../../assets/image 28.png";
+import mbg from "../../assets/image 27.png";
+import hn from "../../assets/image 29.png";
+import hc from "../../assets/image 30.png";
 
 const Homepage = () => {
 	return (
@@ -88,6 +92,20 @@ const Homepage = () => {
 			</div>
 			<div className='mt-80'>
 				<Benefits />
+			</div>
+			<div className='flex items-center flex-row justify-evenly px-10 py-10 h-10'>
+				<div>
+					<img className='w-22 h-10' src={who} alt='' />
+				</div>
+				<div>
+					<img className='w-22 h-10' src={hc} alt='' />
+				</div>
+				<div>
+					<img className='w-22 h-10' src={hn} alt='' />
+				</div>
+				<div>
+					<img className='w-22 h-10' src={mbg} alt='' />
+				</div>
 			</div>
 		</>
 	);

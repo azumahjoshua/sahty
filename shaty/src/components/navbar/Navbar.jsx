@@ -14,7 +14,7 @@ const Navbar = () => {
 	];
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<header className='fixed  w-screen top-0 left-0 bg-green shadow-md overflow-auto '>
+		<header className='fixed bg-white  w-screen top-0 left-0 bg-green shadow-md overflow-auto '>
 			<nav className='flex items-center justify-between px-10 py-0'>
 				<img src={logo} alt='shaty logo' className='w-20 ht-20' />
 				<button
@@ -24,7 +24,7 @@ const Navbar = () => {
 					<ion-icon name={isOpen ? "close" : "menu"}></ion-icon>
 				</button>
 				<ul
-					className={`md:flex md:items-center md:pb-0  absolute md:static bg-white md:z-auto z-[-100] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+					className={`md:flex md:items-center md:pb-0  absolute md:static bg-white md:z-auto  left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
 						isOpen ? "top-20 " : "top-[-490px]"
 					}`}
 				>
