@@ -10,7 +10,7 @@ import {
 	NavBar,
 	Ourservices,
 	Signup,
-	Footer,
+	// Footer,
 } from "./components";
 // import Footer from "./components/Footer/Footer";
 
@@ -28,7 +28,7 @@ const App = () => {
 					<Route exact path='/healthblog' element={<Healthblog />} />
 				</Routes>
 			</BrowserRouter>
-			<Footer />
+			{/* <Footer /> */}
 		</div>
 	);
 };
