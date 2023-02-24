@@ -35,7 +35,7 @@ const Speciality = ({ doctors }) => {
 	// );
 
 	return (
-		<div className='flex flex-col items-center mb-100'>
+		<div className='flex flex-col items-center mb-100 '>
 			<h2 className='text-2xl font-bold mb-4'>Our Doctors</h2>
 			<div className='relative flex justify-center align-middle items-center w-full'>
 				<div className='flex overflow-x-scroll'>

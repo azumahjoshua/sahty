@@ -4,7 +4,7 @@ import logo from "../../assets/shaty.png";
 
 const Navbar = () => {
 	const links = [
-		{ name: "Home", link: "homepage" },
+		{ name: "Home", link: "/homepage" },
 		{ name: "Our Services", link: "/services" },
 		{ name: "Find Doctor", link: "/findadoctor" },
 		{ name: "Signup", link: "/signup" },
@@ -14,7 +14,7 @@ const Navbar = () => {
 	];
 	const [isOpen, setIsOpen] = useState(false);
 	return (
-		<header className='fixed bg-white  w-screen top-0 left-0 bg-green shadow-md overflow-auto '>
+		<header className='fixed bg-white  w-screen top-0 left-0  shadow-md overflow-auto '>
 			<nav className='flex items-center justify-between px-10 py-0'>
 				<img src={logo} alt='shaty logo' className='w-20 ht-20' />
 				<button
