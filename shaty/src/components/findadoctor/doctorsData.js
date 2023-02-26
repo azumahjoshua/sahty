@@ -7,6 +7,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Dentist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 346,
@@ -16,6 +18,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/02/60/04/09/240_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
 		speciality: "Pediatrician",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "Hospital Ibn Sina",
 	},
 	{
 		id: 347,
@@ -25,6 +29,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Cardiologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 341,
@@ -34,6 +40,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/02/60/04/09/240_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
 		speciality: "Ophthalmologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "Hospital Ibn Sina",
 	},
 	{
 		id: 342,
@@ -43,6 +51,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Dermatologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 348,
@@ -52,6 +62,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/02/60/04/09/240_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
 		speciality: "Gynecologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 349,
@@ -61,6 +73,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Neurologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "Hospital Ibn Sina",
 	},
 	{
 		id: 340,
@@ -70,6 +84,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Dentist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 330,
@@ -79,6 +95,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/02/60/04/09/240_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
 		speciality: "Pediatrician",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 331,
@@ -88,6 +106,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Cardiologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "Hospital Ibn Sina",
 	},
 	{
 		id: 311,
@@ -97,6 +117,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/02/60/04/09/240_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
 		speciality: "Ophthalmologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 321,
@@ -106,6 +128,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Dermatologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "Hospital Ibn Sina",
 	},
 	{
 		id: 322,
@@ -115,6 +139,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/02/60/04/09/240_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
 		speciality: "Gynecologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "CHU SOUISSI",
 	},
 	{
 		id: 360,
@@ -124,6 +150,8 @@ const doctorsData = [
 			"https://t4.ftcdn.net/jpg/03/05/41/27/360_F_305412791_XRNiWaFCREjLLpSQfj0e736foBoYXXYv.jpg",
 		speciality: "Neurologist",
 		reviews: 120,
+		degree: "DDS, DMD",
+		hospital: "Hospital Ibn Sina",
 	},
 ];
 

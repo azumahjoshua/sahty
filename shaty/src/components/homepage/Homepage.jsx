@@ -1,6 +1,8 @@
 import React from "react";
-import doc from "../../assets/doc2.png";
-import patients from "../../assets/patients.png";
+import doc from "../../assets/doc3.svg";
+import service1 from "../../assets/service1.svg";
+import service2 from "../../assets/service2.svg";
+import service3 from "../../assets/service3.svg";
 import arc from "../../assets/Arc.svg";
 import Jambotron from "./Jambotron";
 import Services from "./Services";
@@ -40,14 +42,14 @@ const Homepage = () => {
 								className=' w-full h-80  object-center rounded-br-lg'
 							/>
 						</div>
-						<div className='z-50'>
+						{/* <div className='z-50'>
 							<img
 								src={patients}
 								alt='doctor'
 								className='absolute w-38 h-40 top-[355px] right-[450px] object-center rounded-br-lg'
 							/>
-						</div>
-						<div className='flex  flex-col  md:w-auto items-center   py-20'>
+						</div> */}
+						<div className='flex  flex-col  md:w-auto items-center   py-20 sm:visible '>
 							<div className='mb-20'>
 								<img className='w-20' src={arc} alt='arc' />
 							</div>
@@ -60,28 +62,14 @@ const Homepage = () => {
 					</div>
 				</div>
 			</div>
-			<div className='mx-20  -mt-40  h-36 bg-teal-500 flex justify-evenly text-xs  md:max-xl:flex'>
-				<Jambotron
-					// src=""
-					name='time'
-					heading='24 hours service'
-					text='lorem ipsum dolor sit amet,connector adicipafg'
-				/>
-
-				<Jambotron
-					// src=""
-					name='battery-full'
-					heading='10 years of exprience'
-					text='lorem ipsum dolor sit amet,connector adicipafg'
-				/>
-				<Jambotron
-					// src=""
-					name='medkit'
-					heading='High quality care'
-					text='lorem ipsum dolor sit amet,connector adicipafg'
-				/>
+			{/* <div className='mx-20  -mt-40  h-36 bg-teal-500 flex justify-evenly text-xs  md:max-xl:flex py-5'>
+			</div> */}
+			<div className='mx-4 sm:mx-20 -mt-40 h-36 bg-teal-500 flex justify-evenly text-xs md:max-xl:flex py-5 '>
+				<Jambotron src={service1} />
+				<Jambotron src={service2} />
+				<Jambotron src={service3} />
 			</div>
-			<div className='mx-20 '>
+			<div className=''>
 				<Services />
 			</div>
 			<div>

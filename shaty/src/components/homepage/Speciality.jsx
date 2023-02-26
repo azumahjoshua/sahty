@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SpecialityUtility from "./SpecialityUtility";
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
 
 const Speciality = ({ doctors }) => {
 	const [startDoctorIndex, setStartDoctorIndex] = useState(0);
@@ -35,9 +36,9 @@ const Speciality = ({ doctors }) => {
 	// );
 
 	return (
-		<div className='flex flex-col items-center mb-100 '>
-			<h2 className='text-2xl font-bold mb-4'>Our Doctors</h2>
-			<div className='relative flex justify-center align-middle items-center w-full'>
+		<div className='flex flex-col items-center mb-0 '>
+			<h2 className='text-2xl font-bold mb-4'>Top Specialist</h2>
+			<div className='relative  flex justify-center align-middle items-center w-full'>
 				<div className='flex overflow-x-scroll'>
 					{displayedDoctors.map((doctor) => (
 						<div key={doctor.id} className='h-full flex-shrink-0 w-64 px-4'>
@@ -52,7 +53,7 @@ const Speciality = ({ doctors }) => {
 				</div>
 				<div className='absolute top-40 left-0 w-full h-full flex items-center justify-between'>
 					<button
-						className={`text-3xl font-bold text-gray-500 hover:text-gray-900 transition-colors ${
+						className={`text-3xl font-bold text-teal-500 hover:text-teal-600 transition-colors  ${
 							startDoctorIndex === 0
 								? "cursor-default opacity-50"
 								: "cursor-pointer"
@@ -60,10 +61,10 @@ const Speciality = ({ doctors }) => {
 						onClick={previousDoctors}
 						disabled={startDoctorIndex === 0}
 					>
-						&#8249;
+						<FaArrowCircleLeft />
 					</button>
 					<button
-						className={`text-3xl font-bold text-gray-500 hover:text-gray-900 transition-colors ${
+						className={`text-3xl font-bold text-teal-500 hover:text-teal-600 transition-colors ${
 							startDoctorIndex + 4 >= doctors.length
 								? "cursor-default opacity-50"
 								: "cursor-pointer"
@@ -71,7 +72,7 @@ const Speciality = ({ doctors }) => {
 						onClick={nextDoctors}
 						disabled={startDoctorIndex + 4 >= doctors.length}
 					>
-						&#8250;
+						<FaArrowCircleRight />
 					</button>
 				</div>
 			</div>

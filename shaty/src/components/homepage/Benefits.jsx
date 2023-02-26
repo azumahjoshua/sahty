@@ -1,7 +1,9 @@
 import React from "react";
 import BenefitsUtility from "./BenefitsUtility";
-import operation from "../../assets/operation.png";
-
+import operation from "../../assets/Group 123.svg";
+import pt from "../../assets/pt.svg";
+import bills from "../../assets/bills.svg";
+import clinic from "../../assets/clinics.svg";
 const Benefits = () => {
 	return (
 		<div className='flex flex-col md:flex-row justify-between bg-teal-50 h-full py-10'>
@@ -15,13 +17,13 @@ const Benefits = () => {
 					</h5>
 				</div>
 				<div>
-					<BenefitsUtility heading='Modern Clinic' />
+					<BenefitsUtility src={clinic} heading='Modern Clinic' />
 				</div>
 				<div>
-					<BenefitsUtility heading='Less Consultation Fees' />
+					<BenefitsUtility src={bills} heading='Less Consultation Fees' />
 				</div>
 				<div>
-					<BenefitsUtility heading='Professional Treatment' />
+					<BenefitsUtility src={pt} heading='Professional Treatment' />
 				</div>
 			</div>
 		</div>

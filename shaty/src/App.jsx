@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import "./index.css";
 import {
@@ -17,17 +17,15 @@ import {
 const App = () => {
 	return (
 		<div>
-			<BrowserRouter>
-				<NavBar />
-				<Routes>
-					<Route exact path='/homepage' element={<Homepage />} />
-					<Route exact path='/services' element={<Ourservices />} />
-					<Route exact path='/findadoctor' element={<Findadoctor />} />
-					<Route exact path='/signup' element={<Signup />} />
-					<Route exact path='/login' element={<Login />} />
-					<Route exact path='/healthblog' element={<Healthblog />} />
-				</Routes>
-			</BrowserRouter>
+			<NavBar />
+			<Routes>
+				<Route exact path='/' element={<Homepage />} />
+				<Route exact path='/services' element={<Ourservices />} />
+				<Route exact path='/findadoctor' element={<Findadoctor />} />
+				<Route exact path='/signup' element={<Signup />} />
+				<Route exact path='/login' element={<Login />} />
+				<Route exact path='/healthblog' element={<Healthblog />} />
+			</Routes>
 			{/* <Footer /> */}
 		</div>
 	);

@@ -2,24 +2,101 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import doctorsData from "./doctorsData";
-// import { useState } from "react";
+import { useState } from "react";
+import { BiCalendarEvent } from "react-icons/bi";
+import { BsFillPersonFill } from "react-icons/bs";
+import { RiMessengerLine } from "react-icons/ri";
+import { HiOutlineArrowRight } from "react-icons/hi";
+// import bimessage from "../../assets/bxl_messenger.svg";
 const DoctorCard = ({ doctor }) => {
+	const [isHovering, setIsHovering] = useState(false);
+	const handleHover = (event) => {
+		setIsHovering(event.type === "mouseenter");
+	};
 	return (
-		<div className='bg-white shadow-lg rounded-lg px-4 py-6'>
-			<img
-				src={doctor.image}
-				alt={doctor.name}
-				className='w-full mb-4 rounded-lg'
-			/>
-			<div className='flex flex-col justify-center  items-center'>
-				<h2 className='text-lg font-bold mb-2'>{doctor.name}</h2>
-				<p className='text-gray-500 text-sm mb-2'>{doctor.speciality}</p>
-				<p className='text-gray-500 text-sm'>
-					{doctor.gender === "M" ? "Male" : "Female"}
-				</p>
-				<p>{doctor.reviews}</p>
-			</div>
+		<div onMouseEnter={handleHover} onMouseLeave={handleHover}>
+			{isHovering ? (
+				<div className='relative bg-teal-500 flex flex-row py-5 overflow-visible w-full'>
+					<button className='absolute left-56'>View Profile</button>
+					<div className='flex flex-col  place-items-center'>
+						<img
+							src={doctor.image}
+							alt={doctor.name}
+							className='w-20 h-20 mb-4 rounded-full'
+						/>
+						<h2 className='text-teal-50 leading-6 text-xl font-semibold mb-2'>
+							{doctor.name}
+						</h2>
+						<p className='font-normal text-base leading-5 text-teal-100/75'>
+							{doctor.speciality}
+						</p>
+						{/* <p className='text-gray-500 text-sm'>
+							{doctor.gender === "M" ? "Male" : "Female"}
+						</p> */}
+						<div className='booking flex flex-row  text-teal-50 mt-2  '>
+							<BiCalendarEvent className='mr-2  w-8 h-8' />
+							<BsFillPersonFill className='mr-2  w-8 h-8' />
+							<RiMessengerLine className='mr-2  w-8 h-8' />
+						</div>
+						<p>{doctor.reviews} reviews</p>
+					</div>
+					<div className='border-l-2 border-teal-50 pr-10'>
+						<div>
+							<h4>Degree</h4>
+							<p>{doctor.degree}</p>
+						</div>
+						<div>
+							<h4>Speciality</h4>
+							<p className='text-gray-500 text-sm mb-2'>{doctor.speciality}</p>
+						</div>
+						<div>
+							<h4>Hospital</h4>
+							<p className='text-gray-500 text-sm mb-2'>{doctor.hospital}</p>
+						</div>
+					</div>
+					<div className='absolute top-48 left-32'>
+						<p>
+							Booking Available Online
+							<span>
+								<HiOutlineArrowRight />
+							</span>
+						</p>
+					</div>
+				</div>
+			) : (
+				// <div className='bg-green-900'>Not hovering</div>
+				<div className='bg-white shadow-lg rounded-lg px-4 py-6'>
+					<img
+						src={doctor.image}
+						alt={doctor.name}
+						className='w-full mb-4 rounded-lg'
+					/>
+					<div className='flex flex-col justify-center  items-center'>
+						<h2 className='text-lg font-bold mb-2'>{doctor.name}</h2>
+						<p className='text-gray-500 text-sm mb-2'>{doctor.speciality}</p>
+						<p className='text-gray-500 text-sm'>
+							{doctor.gender === "M" ? "Male" : "Female"}
+						</p>
+						<p>{doctor.reviews} reviews</p>
+					</div>
+				</div>
+			)}
 		</div>
+		// <div className='bg-white shadow-lg rounded-lg px-4 py-6'>
+		// 	<img
+		// 		src={doctor.image}
+		// 		alt={doctor.name}
+		// 		className='w-full mb-4 rounded-lg'
+		// 	/>
+		// 	<div className='flex flex-col justify-center  items-center'>
+		// 		<h2 className='text-lg font-bold mb-2'>{doctor.name}</h2>
+		// 		<p className='text-gray-500 text-sm mb-2'>{doctor.speciality}</p>
+		// 		<p className='text-gray-500 text-sm'>
+		// 			{doctor.gender === "M" ? "Male" : "Female"}
+		// 		</p>
+		// 		<p>{doctor.reviews} reviews</p>
+		// 	</div>
+		// </div>
 	);
 };
 const countryList = [
@@ -187,7 +264,7 @@ const FindADoctor = () => {
 					</div>
 				</div>
 				<div className='h-96 absolute top-64 max-w-5xl w-full ml-96 bg-red mt-3'>
-					<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+					<div className='relative grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
 						{doctorsData.map((doctor) => (
 							<DoctorCard key={doctor.id} doctor={doctor} />
 						))}
