@@ -10,6 +10,7 @@ import {
 	NavBar,
 	Ourservices,
 	Signup,
+	Singledoctor,
 	// Footer,
 } from "./components";
 // import Footer from "./components/Footer/Footer";
@@ -22,6 +23,7 @@ const App = () => {
 				<Route exact path='/' element={<Homepage />} />
 				<Route exact path='/services' element={<Ourservices />} />
 				<Route exact path='/findadoctor' element={<Findadoctor />} />
+				<Route exact path='/findadoctor/dr/:id' element={<Singledoctor />} />
 				<Route exact path='/signup' element={<Signup />} />
 				<Route exact path='/login' element={<Login />} />
 				<Route exact path='/healthblog' element={<Healthblog />} />

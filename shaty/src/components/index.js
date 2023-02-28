@@ -6,3 +6,4 @@ export { default as NavBar } from "./navbar/Navbar";
 export { default as Ourservices } from "./ourservices/Ourservices";
 export { default as Signup } from "./signup/Signup";
 export { default as Footer } from "./Footer/Footer";
+export { default as Singledoctor } from "./findadoctor/SingleDoctor";
