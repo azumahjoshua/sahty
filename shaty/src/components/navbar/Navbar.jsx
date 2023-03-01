@@ -5,12 +5,12 @@ import logo from "../../assets/shaty.png";
 const Navbar = () => {
 	const links = [
 		{ name: "Home", link: "/" },
-		{ name: "Our Services", link: "/services" },
+		// { name: "Our Services", link: "/services" },
 		{ name: "Find Doctor", link: "/findadoctor" },
 		{ name: "Signup", link: "/signup" },
 		{ name: "Login", link: "/login" },
 		{ name: "Blog", link: "/healthblog" },
-		{ name: "Location", link: "/location" },
+		// { name: "Location", link: "/location" },
 	];
 	const [isOpen, setIsOpen] = useState(false);
 	return (

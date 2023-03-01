@@ -10,11 +10,9 @@ const Benefits = () => {
 			<div className='mb-10 md:mb-0'>
 				<img className='md:block hidden' src={operation} alt='rectangle' />
 			</div>
-			<div className='mr-4 md:mr-36 py-10 md:py-0 ml-4 md:ml-40'>
-				<div className='font-source-sans-pro font-normal text-4xl leading-15 text-black'>
-					<h5 className='text-center text-2xl'>
-						Benefits of utilizing Shatty App
-					</h5>
+			<div className=' -mt-20 md:mt-10 mr-4 md:mr-36 py-10 md:py-0 ml-4 md:ml-40'>
+				<div className='font-bold text-xl leading-15 text-black'>
+					<h5 className=''>Benefits of utilizing Shatty App</h5>
 				</div>
 				<div>
 					<BenefitsUtility src={clinic} heading='Modern Clinic' />

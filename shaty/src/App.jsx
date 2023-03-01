@@ -11,7 +11,7 @@ import {
 	Ourservices,
 	Signup,
 	Singledoctor,
-	// Footer,
+	Footer,
 } from "./components";
 // import Footer from "./components/Footer/Footer";
 
@@ -28,7 +28,7 @@ const App = () => {
 				<Route exact path='/login' element={<Login />} />
 				<Route exact path='/healthblog' element={<Healthblog />} />
 			</Routes>
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 };

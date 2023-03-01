@@ -24,7 +24,6 @@ const Speciality = ({ doctors }) => {
 		};
 		window.addEventListener("resize", handleResize);
 		return () => window.removeEventListener("resize", handleResize);
-		// handleResize();
 	}, []);
 	const displayedDoctors = isMobile
 		? doctors.slice(startDoctorIndex, startDoctorIndex + 1)
@@ -46,12 +45,12 @@ const Speciality = ({ doctors }) => {
 								src={doctor.image}
 								name={doctor.name}
 								speciality={doctor.speciality}
-								reviews={Math.floor(Math.random() * 50)}
+								reviews={doctor.reviews}
 							/>
 						</div>
 					))}
 				</div>
-				<div className='absolute top-40 left-0 w-full h-full flex items-center justify-between'>
+				<div className='absolute top-40 left-0 w-screen h-full flex items-center justify-between gap-2'>
 					<button
 						className={`text-3xl font-bold text-teal-500 hover:text-teal-600 transition-colors  ${
 							startDoctorIndex === 0
