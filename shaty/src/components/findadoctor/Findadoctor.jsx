@@ -1,38 +1,31 @@
-import React, { useState } from "react";
-import { FaSortAmountDownAlt, FaFilter } from "react-icons/fa";
+import React, { useState, useMemo } from "react";
+import {
+	FaFilter,
+	FaGraduationCap,
+	FaStethoscope,
+	FaSortAmountDownAlt,
+} from "react-icons/fa";
+import { FcCalendar } from "react-icons/fc";
+import { CgGenderMale, CgGenderFemale } from "react-icons/cg";
 import { GrClose } from "react-icons/gr";
 import doctorsData from "./doctorsData";
 import DoctorCard from "./DoctorCard";
-
 const FindADoctor = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [searchQuery, setSearchQuery] = useState("");
-	const [filteredResults, setFilteredResults] = useState([]);
-	const handleSearch = (event) => {
-		const value = event.target.value.toLowerCase();
-		// console.log(value);
-		let filtered = "";
-		if (searchQuery === " ") {
-			doctorsData.map((doctor) => {
-				return doctor;
-			});
-		} else {
-			filtered = doctorsData.filter((doctor) => {
-				return (
-					doctor.name.toLowerCase().includes(value) ||
-					doctor.hospital.toLowerCase().includes(value)
-					// ||
-					// doctor.speciality.toLowerCase().includes(value)
-				);
-			});
-		}
-		// console.log(filtered);
-		setSearchQuery(value);
-		setFilteredResults(filtered);
-	};
+	const filteredResults = useMemo(() => {
+		const result = doctorsData.filter(
+			(doctor) =>
+				doctor.name.toLowerCase().includes(searchQuery) ||
+				doctor.hospital.toLowerCase().includes(searchQuery)
+		);
+		return result;
+	}, [searchQuery, doctorsData]);
+	// const [isSort, setIsSort] = useState(false);
+
 	return (
-		<div className='relative top-32 flex flex-col'>
-			<div className='flex flex-col items-center justify-center px-6 sm:px-0'>
+		<div>
+			<div className='flex flex-col items-center justify-center px-6 mt-32'>
 				<h3 className='text-3xl font-semibold tracking-wider text-center sm:text-left'>
 					Search for Doctor, Make an Appointment
 				</h3>
@@ -41,75 +34,162 @@ const FindADoctor = () => {
 					cities that suit your calendar
 				</p>
 			</div>
+			{/* add a sort and filter button in mobile version here put in a diffent component later */}
 
-			<div className=''>
-				<div className='flex flex-row justify-center  md:hidden'>
-					<button
-						className='filter w-28 py-2 mr-6 bg-teal-500 hover:bg-teal-600 text-white font-semibold align-middle rounded mt-6 flex justify-center items-center '
-						onClick={() => {
-							setIsOpen(!isOpen);
-							// console.log("you click this filter button");
-						}}
-					>
-						<FaSortAmountDownAlt className='mr-2' />
-						Sort
-					</button>
-					<div
-						className={`absolute md:static bg-teal-900 ml-[-10px] w-full   transition-all duration-500 ease-in ${
-							isOpen ? "top-[-128px] " : "top-[-400px]"
-						}`}
-					>
-						<div className='flex items-center gap-x-40 bg-white h-14 w-full justify-start'>
+			<div>
+				<div
+					className={`absolute top-0 h-fit pb-10 bg-teal-200 md:hidden ${
+						isOpen ? "inline-block" : "hidden"
+					}`}
+				>
+					<div className='flex h-40  bg-teal-700 w-full flex-col items-center px-6 transition duration-150 ease-in '>
+						<div className='flex flex-row justify-between'>
 							<button
+								className='text-white font-bold text-lg'
 								onClick={() => {
 									setIsOpen(!isOpen);
 								}}
 							>
-								<GrClose />
+								<GrClose className='text-white font-bold text-lg' />
 							</button>
-							<h1>filter</h1>
+							<span className='text-white font-bold text-base'>Filters</span>
 						</div>
-						<div className='ml-5'>
-							<div className='flex flex-col justify-center ml-10 mb-10 mt-10 mr-6'>
-								<label htmlFor='Search' className='mb-2'>
-									Search
-								</label>
-								<div className='flex'>
-									<input
-										className='w-40 h-12 box-border bg-teal-100 border border-teal-500 rounded-sm py-1 pl-3'
-										type='text'
-										placeholder='Search doctor'
-										value={searchQuery}
-										onChange={handleSearch}
-										// onChange={() => {
-										// 	handleSearch();
-										// }}
-									/>
-									{/* <button
-										onClick={() => {
-											handleSearch();
-										}}
-									>
-										<FaSearch className='w-5 h-12  px-5 flex items-center justify-center text-black text-sm' />
-									</button> */}
-								</div>
-							</div>
+						<div className='mx-auto mt-10'>
+							<label>
+								<input
+									className='w-52 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-md'
+									type='text'
+									value={searchQuery}
+									placeholder=' Search Doctor by name'
+									onChange={(e) => setSearchQuery(e.target.value.trim())}
+								/>
+							</label>
 						</div>
 					</div>
+					<div className='flex flex-col items-start justify-start rounded-md font-light px-10 bg-slate-50 h-40 mx-5 mt-2 w-70 sm:px-0'>
+						<h4 className='mb-2 mt-5 flex flex-row gap-2'>
+							<FaGraduationCap /> Title
+						</h4>
+						<div className='flex flex-row flex-wrap gap-5'>
+							<label htmlFor='professor'>
+								<input type='checkbox' />
+								<span className='ml-2'>Professor</span>
+							</label>
+							<label htmlFor='Specialist'>
+								<input type='checkbox' />
+								<span className='ml-2'>Specialist</span>
+							</label>
+							<label htmlFor='Consultant'>
+								<input type='checkbox' />
+								<span className='ml-2'>Consultant</span>
+							</label>
+						</div>
+					</div>
+					<div className='flex flex-col items-start justify-start rounded-md font-light px-10 bg-slate-50 h-36 mx-5 mt-2 w-70 sm:px-0'>
+						<h4 className='mb-2 mt-5 flex flex-row gap-2'>
+							<div className='flex flex-row'>
+								<CgGenderMale />
+								<CgGenderFemale />
+							</div>
+							Gender
+						</h4>
+						<div className='flex flex-row flex-wrap gap-5'>
+							<label htmlFor='Male'>
+								<input type='checkbox' />
+								<span className='ml-2'>Male</span>
+							</label>
+							<label htmlFor='Female'>
+								<input type='checkbox' />
+								<span className='ml-2'>Female</span>
+							</label>
+						</div>
+					</div>
+					<div className='flex flex-col items-start justify-start rounded-md font-light px-10 bg-slate-50 h-44 mx-5 mt-2 w-70 sm:px-0'>
+						<h4 className='mb-2 mt-5 flex flex-row gap-2'>
+							<div className='flex flex-row'>
+								<FcCalendar />
+							</div>
+							Availiabilty
+						</h4>
+						<div className='flex flex-col gap-5'>
+							<label htmlFor='Anyday'>
+								<input type='checkbox' />
+								<span className='ml-2'>Anyday</span>
+							</label>
+							<label htmlFor='today'>
+								<input type='checkbox' />
+								<span className='ml-2'>Today</span>
+							</label>
+							<label htmlFor='Tomorrow'>
+								<input type='checkbox' />
+								<span className='ml-2'>Tomorrow</span>
+							</label>
+						</div>
+					</div>
+					<div className='flex flex-col items-start justify-start rounded-md font-light px-10 bg-slate-50 h-44 mx-5 mt-2 w-70 sm:px-0'>
+						<h4 className='mb-2 mt-5 flex flex-row gap-2'>
+							<div className='flex flex-row'>
+								<FaStethoscope />
+							</div>
+							Entity
+						</h4>
+						<div className='flex flex-col gap-5'>
+							<label htmlFor='Hospetal'>
+								<input type='checkbox' />
+								<span className='ml-2'>Hospetal</span>
+							</label>
+							<label htmlFor='today'>
+								<input type='checkbox' />
+								<span className='ml-2'>Clinic</span>
+							</label>
+						</div>
+					</div>
+					<div className='flext justify-between mx-auto mt-5 ml-5'>
+						<button className='w-28 py-2 mr-6 bg-red-500 hover:bg-teal-600 text-white font-semibold rounded-r-lg'>
+							Filter
+						</button>
+						<button className="'w-28 py-2 px-10 text-white border-2 border-slate-500 rounded-md text-center ">
+							Cancle
+						</button>
+					</div>
+				</div>
+
+				<div className='flex flex-row justify-center gap-10 ml-10 md:hidden'>
+					{/* <Select
+						className='filter w-28 py-2 mr-6 bg-teal-500 hover:bg-teal-600 text-white font-semibold align-middle rounded mt-6 flex justify-center items-center '
+						options={options}
+					/> */}
+					<button className='filter w-28 py-2 mr-6 bg-teal-500 hover:bg-teal-600 text-white font-semibold align-middle rounded mt-6 flex justify-center items-center '>
+						<FaSortAmountDownAlt className='mr-2' /> Sort
+						{/* <select
+							onClick={() => {
+								// setIsOpen(!isOpen);
+								console.log("you click this sorting button");
+							}}
+						>
+							<option value='Best Match'>Best Match</option>
+							<option value='Top Rated'>Top Rated</option>
+							<option value='price-low-to-high'>Price Low to High</option>
+							<option value='price-high-to-low'>Price High to Low</option>
+						</select> */}
+					</button>
+
 					<button
-						className='filter w-28 py-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold align-middle rounded mt-6 flex justify-center items-center '
+						className='filter w-28 py-2 mr-6 bg-teal-500 hover:bg-teal-600 text-white font-semibold align-middle rounded mt-6 flex justify-center items-center '
 						onClick={() => {
-							console.log("you click this filter button");
+							setIsOpen(!isOpen);
+							// console.log("you click this filte button");
 						}}
 					>
-						<FaFilter className='mr-2' /> Filter
+						<FaFilter className='mr-2' />
+						Filter
 					</button>
 				</div>
-				<div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8'>
-					{filteredResults.map((doctor, index) => {
-						return <DoctorCard key={index} doctor={doctor} />;
-					})}
-				</div>
+			</div>
+			<div className='grid md:gap-x-0 gap-y-5 md:gap-y-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-8 md:ml-32'>
+				{filteredResults.map((doctor, index) => {
+					return <DoctorCard key={index} doctor={doctor} />;
+				})}
 			</div>
 		</div>
 	);

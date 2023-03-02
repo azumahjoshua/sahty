@@ -7,7 +7,7 @@ import {
 } from "react-icons/gr";
 const Footer = () => {
 	return (
-		<div className='sticky top-[100vh] bottom-0 h-96 w-screen bg-teal-50'>
+		<div className='bg-teal-50 md:h-52'>
 			{/* <div className='absolute -left-20  -z-10'>
 				<div className='relative w-96 h-96 rounded-full border-4 border-black-400'>
 					<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-gradient-to-br from-green-200 to-blue-200 bg-opacity-20 mix-blend-normal opacity-20'></div>

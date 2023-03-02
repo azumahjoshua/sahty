@@ -24,8 +24,8 @@ const SingleDoctor = ({ doctor }) => {
 	});
 	// console.log(singledoctor);
 	return (
-		<>
-			<div className='relative top-36  h-full  mx-2 space-y-5 '>
+		<div>
+			<div className='mt-48 h-full  mx-2 space-y-5 '>
 				<div className='md:flex flex-row mb-20 gap-x-16 md:container md:mx-auto mr-20'>
 					<div className='w-full h-full mx-10 px-5 pb-10 bg-teal-100 border-2 border-teal-300 rounded-md md:w-96'>
 						{/* {singledoctor.name} */}
@@ -189,7 +189,7 @@ const SingleDoctor = ({ doctor }) => {
 			<div className='footer mx-0 mt-72'>
 				<img src={footerimg} alt='operation' />
 			</div>
-		</>
+		</div>
 	);
 };
 

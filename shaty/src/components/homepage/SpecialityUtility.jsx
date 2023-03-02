@@ -2,7 +2,7 @@ import React from "react";
 
 const SpecialityUtility = (props) => {
 	return (
-		<div className='box-border absolute w-60 h-72 left-101 top-2973 bg-white border border-solid border-green-500 rounded-5'>
+		<div className='box-border absolute w-60 -z-50 h-72 left-101 top-2973 bg-white border border-solid border-green-500 rounded-5'>
 			<div className='mt-2 px-2'>
 				<img src={props.src} alt='Doctors Name' />
 			</div>

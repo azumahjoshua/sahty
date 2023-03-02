@@ -37,7 +37,7 @@ const Speciality = ({ doctors }) => {
 	return (
 		<div className='flex flex-col items-center mb-0 '>
 			<h2 className='text-2xl font-bold mb-4'>Top Specialist</h2>
-			<div className='relative  flex justify-center align-middle items-center w-full'>
+			<div className='flex justify-center  items-center w-screen'>
 				<div className='flex overflow-x-scroll'>
 					{displayedDoctors.map((doctor) => (
 						<div key={doctor.id} className='h-full flex-shrink-0 w-64 px-4'>
@@ -50,9 +50,9 @@ const Speciality = ({ doctors }) => {
 						</div>
 					))}
 				</div>
-				<div className='absolute top-40 left-0 w-screen h-full flex items-center justify-between gap-2'>
+				<div className='absolute  md:top-[1450px]  w-96 h-full flex items-center justify-between gap-2'>
 					<button
-						className={`text-3xl font-bold text-teal-500 hover:text-teal-600 transition-colors  ${
+						className={`text-3xl ml-12 font-bold text-teal-500 hover:text-teal-600 transition-colors md:-ml-52 ${
 							startDoctorIndex === 0
 								? "cursor-default opacity-50"
 								: "cursor-pointer"
@@ -63,7 +63,7 @@ const Speciality = ({ doctors }) => {
 						<FaArrowCircleLeft />
 					</button>
 					<button
-						className={`text-3xl font-bold text-teal-500 hover:text-teal-600 transition-colors ${
+						className={`text-3xl  mr-8  font-bold text-teal-500 hover:text-teal-600 transition-colors md:-mr-56 ${
 							startDoctorIndex + 4 >= doctors.length
 								? "cursor-default opacity-50"
 								: "cursor-pointer"

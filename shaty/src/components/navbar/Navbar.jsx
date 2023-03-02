@@ -15,7 +15,7 @@ const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<header className='fixed bg-white  w-screen top-0 left-0  shadow-md '>
-			<nav className='flex items-center justify-between px-10 py-0'>
+			<nav className='flex  items-center justify-between  py-0'>
 				<Link to='/'>
 					<img src={logo} alt='shaty logo' className='w-20 ht-20' />
 				</Link>
@@ -25,8 +25,19 @@ const Navbar = () => {
 				>
 					<ion-icon name={isOpen ? "close" : "menu"}></ion-icon>
 				</button>
+				{/* <div className='flex items-center justify-center mt-20 ml-10 mr-10'>
+					<input
+						className='w-52 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-sm md:hidden'
+						type='text'
+						placeholder='Search doctor'
+
+						// onChange={() => {
+						// 	handleSearch();
+						// }}
+					/>
+				</div> */}
 				<ul
-					className={`md:flex md:items-center md:pb-0  absolute md:static bg-white md:z-auto  left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+					className={`md:flex md:items-center md:pb-0 md:mr-5 absolute md:static bg-white md:z-auto  left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
 						isOpen ? "top-20 " : "top-[-490px]"
 					}`}
 					// className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
