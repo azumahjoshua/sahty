@@ -3,7 +3,7 @@ import { FiLogIn } from "react-icons/fi";
 import { FaGoogle } from "react-icons/fa";
 const Login = () => {
 	return (
-		<div className='relative top-52 mx-5 pb-10 md:mx-96'>
+		<div className='mx-auto pb-10 md:w-96 md:mt-36 md:mb-10'>
 			<form className='abolute  flex flex-col' action=''>
 				<div className='h-full bg-teal-50 '>
 					<div className='h-10 bg-teal-700 py-2 text-white text-bold rounded-t-md text-center'>

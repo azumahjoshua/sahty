@@ -20,7 +20,7 @@ const FindADoctor = () => {
 				doctor.hospital.toLowerCase().includes(searchQuery)
 		);
 		return result;
-	}, [searchQuery, doctorsData]);
+	}, [searchQuery]);
 	// const [isSort, setIsSort] = useState(false);
 
 	return (
