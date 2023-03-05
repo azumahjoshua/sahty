@@ -10,7 +10,7 @@ import { HiOutlineArrowRight } from "react-icons/hi";
 const DoctorCard = ({ doctor }) => {
 	return (
 		<div>
-			<div className='w-96 h-64  bg-teal-500 flex flex-row py-1 '>
+			<div className='w-96 h-64  rounded-md bg-teal-500 flex flex-row py-1 '>
 				{/* <button className='absolute left-56'>View Profile</button> */}
 				<div className='flex flex-col  place-items-center ml-5'>
 					<img
@@ -37,7 +37,7 @@ const DoctorCard = ({ doctor }) => {
 					</p>
 				</div>
 				<div className=''>
-					<button className='ml-20 mb-0 py-2 px-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300  bg-teal-500 text-white border border-white   rounded-sm shadow-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>
+					<button className='ml-22 mb-0 py-2 px-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300  bg-teal-500 text-white border border-white   rounded-sm shadow-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>
 						<Link to={`/findadoctor/dr/:${doctor.id}`}>View Profile</Link>
 					</button>
 					<div className='border-l-2 border-teal-50 pl-2 ml-2 my-8 mb-2'>
@@ -68,7 +68,7 @@ const DoctorCard = ({ doctor }) => {
 					</div>
 
 					<div className='flex items-center '>
-						<p className='font-semibold text-sm text-white mr-2'>
+						<p className='font-semibold text-sm text-white mr-10'>
 							Booking Available Online
 						</p>
 						<span className='text-white font-semibold text-sm'>

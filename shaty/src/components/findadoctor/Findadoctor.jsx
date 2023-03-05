@@ -22,6 +22,7 @@ const FindADoctor = () => {
 		return result;
 	}, [searchQuery]);
 	// const [isSort, setIsSort] = useState(false);
+	const style = { color: "white", fontSize: "1em", marginRight: 250 };
 
 	return (
 		<div>
@@ -34,6 +35,94 @@ const FindADoctor = () => {
 					cities that suit your calendar
 				</p>
 			</div>
+			{/* Side Bar */}
+			<div className='flex flex-row mt-5 w-full'>
+				<div>
+					<div className='w-80 mr-10 h-full border-t-2 border-r-2 border-gray-300 hidden md:inline-block'>
+						{/* Search */}
+						<div className='mt-5 flex flex-col ml-10'>
+							<div className='mb-5'>
+								<p>Search</p>
+							</div>
+							<label>
+								<input
+									className='w-52 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-md'
+									type='text'
+									value={searchQuery}
+									placeholder=' Search Doctor by name'
+									onChange={(e) => setSearchQuery(e.target.value.trim())}
+								/>
+							</label>
+						</div>
+						{/* Filter */}
+						<div className='mt-5 flex flex-col ml-10'>
+							<div className='mb-2 flex flex-row justify-between'>
+								<p>Filter</p>
+								<p className='text-red-500 mr-20'>Cancel</p>
+							</div>
+							<div className='flex flex-row flex-wrap'>
+								<button className='w-36 mr-2 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-md'>
+									Neurologist
+								</button>
+								<button className='w-20 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-md'>
+									Rabat
+								</button>
+								<button className='w-36 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-md'>
+									ibn sina hospital
+								</button>
+							</div>
+						</div>
+						{/* District or State */}
+						<div className='mt-5 flex flex-col ml-10'>
+							<div className='mb-2 flex flex-row justify-between'>
+								<p>District or Region</p>
+							</div>
+							<div className='flex flex-row flex-wrap'>
+								<select
+									className='w-52 mr-2 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-md'
+									name='Select District or Region'
+								>
+									<option value=''>Select District or Region</option>
+									<option value='Rabat'>Rabat</option>
+									<option value='Agadir'>Agadir</option>
+									<option value='Casablanca'>Casablanca</option>
+								</select>
+							</div>
+						</div>
+						{/* Gender of doctor */}
+						<div className='mt-5 flex flex-col ml-10 '>
+							<div className='mb-2 flex flex-row justify-between'>
+								<p>Gender of doctor</p>
+							</div>
+							<div className='flex flex-row flex-wrap font-bold gap-5'>
+								<label className='text-teal-100'>
+									<input
+										className='mr-2'
+										type='radio'
+										name='male'
+										value='Male'
+									/>
+									Male
+								</label>
+								<label className='text-teal-100'>
+									<input
+										className='mr-2'
+										type='radio'
+										name='female'
+										value='Female'
+									/>
+									Female
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className='grid  gap-y-5 md:gap-y-6 md:items-end grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-5 md:gap-x-5 '>
+					{filteredResults.map((doctor, index) => {
+						return <DoctorCard key={index} doctor={doctor} />;
+					})}
+				</div>
+			</div>
 			{/* add a sort and filter button in mobile version here put in a diffent component later */}
 
 			<div>
@@ -42,15 +131,19 @@ const FindADoctor = () => {
 						isOpen ? "inline-block" : "hidden"
 					}`}
 				>
-					<div className='flex h-40  bg-teal-700 w-full flex-col items-center px-6 transition duration-150 ease-in '>
-						<div className='flex flex-row justify-between'>
+					<div className='flex h-40   bg-teal-700 w-full flex-col items-center px-6 transition duration-150 ease-in '>
+						<div className='flex  mt-3 flex-row justify-between'>
 							<button
 								className='text-white font-bold text-lg'
 								onClick={() => {
 									setIsOpen(!isOpen);
 								}}
 							>
-								<GrClose className='text-white font-bold text-lg' />
+								<GrClose
+									style={style}
+									// className='text-white font-bold text-lg'
+									// size={50}
+								/>
 							</button>
 							<span className='text-white font-bold text-base'>Filters</span>
 						</div>
@@ -185,11 +278,6 @@ const FindADoctor = () => {
 						Filter
 					</button>
 				</div>
-			</div>
-			<div className='grid md:gap-x-0 gap-y-5 md:gap-y-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-8 md:ml-32'>
-				{filteredResults.map((doctor, index) => {
-					return <DoctorCard key={index} doctor={doctor} />;
-				})}
 			</div>
 		</div>
 	);
