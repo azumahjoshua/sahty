@@ -8,20 +8,23 @@ import {
 } from "react-icons/fa";
 import { FcCalendar } from "react-icons/fc";
 import { GrClose } from "react-icons/gr";
-const Filter = () => {
-	const [isOpen, setIsOpen] = useState(false);
-	// const [searchQuery, setSearchQuery] = useState("");
-	// const filteredResults = useMemo(() => {
-	// 	const result = doctorsData.filter(
-	// 		(doctor) =>
-	// 			doctor.name.toLowerCase().includes(searchQuery) ||
-	// 			doctor.hospital.toLowerCase().includes(searchQuery)
-	// 	);
-	// 	return result;
-	// }, [searchQuery]);
-	// const [isSort, setIsSort] = useState(false);
-	const style = { color: "white", fontSize: "1em", marginRight: 250 };
+import DoctorCard from "./DoctorCard";
+import doctorsData from "./doctorsData";
+import SearchBar from "./SearchBar";
 
+const Filter = ({ filteredResults }) => {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const [searchText, setSearchText] = useState("");
+
+	const handleSearch = (text) => {
+		setSearchText(text);
+	};
+
+	filteredResults = doctorsData.filter((doctor) =>
+		doctor.name.toLowerCase().includes(searchText.toLowerCase())
+	);
+	// console.log(filteredResults);
 	return (
 		<div className=''>
 			<div
@@ -37,27 +40,13 @@ const Filter = () => {
 								setIsOpen(!isOpen);
 							}}
 						>
-							<GrClose
-								style={style}
-								// className='text-white font-bold text-lg'
-								// size={50}
-							/>
+							<GrClose />
 						</button>
 						<span className='text-white font-bold text-base'>Filters</span>
 					</div>
-					{/* Search Bar */}
-					{/* <SearchBar /> */}
-					{/* <div className='mx-auto mt-10'>
-						<label>
-							<input
-								className='w-52 mb-2 h-12 box-border bg-teal-100 border border-teal-500 rounded-md'
-								type='text'
-								value={searchQuery}
-								placeholder=' Search Doctor by name'
-								onChange={(e) => setSearchQuery(e.target.value.trim())}
-							/>
-						</label>
-					</div> */}
+				</div>
+				<div>
+					<SearchBar onSearch={handleSearch} />
 				</div>
 				<div className='flex flex-col items-start justify-start rounded-md font-light px-10 bg-slate-50 h-40 mx-5 mt-2 w-70 sm:px-0'>
 					<h4 className='mb-2 mt-5 flex flex-row gap-2'>
@@ -87,14 +76,16 @@ const Filter = () => {
 						Gender
 					</h4>
 					<div className='flex flex-row flex-wrap gap-5'>
-						<label htmlFor='Male'>
-							<input type='checkbox' />
-							<span className='ml-2'>Male</span>
-						</label>
-						<label htmlFor='Female'>
-							<input type='checkbox' />
-							<span className='ml-2'>Female</span>
-						</label>
+						<p>
+							<label htmlFor='Male'>
+								<input type='checkbox' />
+								<span className='ml-2'>Male</span>
+							</label>
+							<label htmlFor='Female'>
+								<input type='checkbox' />
+								<span className='ml-2'>Female</span>
+							</label>
+						</p>
 					</div>
 				</div>
 				<div className='flex flex-col items-start justify-start rounded-md font-light px-10 bg-slate-50 h-44 mx-5 mt-2 w-70 sm:px-0'>
@@ -177,6 +168,13 @@ const Filter = () => {
 					<FaFilter className='mr-2' />
 					Filter
 				</button>
+			</div>
+			<div className='flex flex-row  items-end justify-end  mt-5  mx-5'>
+				<div className='grid  gap-y-5 md:gap-y-2  grid-cols-1 md:grid-cols-2 lg:gap-x-5 lg:grid-cols-2 mt-5 md:gap-x-5 '>
+					{filteredResults.map((doctor, index) => {
+						return <DoctorCard key={index} doctor={doctor} />;
+					})}
+				</div>
 			</div>
 		</div>
 	);

@@ -1,9 +1,9 @@
 import React from "react";
-import DoctorCard from "./DoctorCard";
-import doctorsData from "./doctorsData";
+// import DoctorCard from "./DoctorCard";
+// import doctorsData from "./doctorsData";
 import Filter from "./Filter";
 import Sidebar from "./Sidebar";
-const FindADoctor = () => {
+const FindADoctor = ({ filteredResults }) => {
 	// const [isOpen, setIsOpen] = useState(false);
 	// const [searchQuery, setSearchQuery] = useState("");
 	// const filteredResults = useMemo(() => {
@@ -32,17 +32,16 @@ const FindADoctor = () => {
 				<Sidebar />
 			</div>
 			<div>
-				<Filter />
+				<Filter filteredResults={filteredResults} />
 			</div>
 			{/* add a sort and filter button in mobile version here put in a diffent component later */}
-
-			<div className='flex flex-row  items-end justify-end  mt-5  mx-5 mr-5'>
+			{/* <div className='flex flex-row  items-end justify-end  mt-5  mx-5'>
 				<div className='grid  gap-y-5 md:gap-y-2  grid-cols-1 md:grid-cols-2 lg:gap-x-5 lg:grid-cols-2 mt-5 md:gap-x-5 '>
 					{doctorsData.map((doctor, index) => {
 						return <DoctorCard key={index} doctor={doctor} />;
 					})}
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
