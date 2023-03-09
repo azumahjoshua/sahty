@@ -1,9 +1,9 @@
 import React from "react";
 import {
 	GrFacebookOption,
-	GrTwitter,
-	GrLinkedinOption,
 	GrInstagram,
+	GrLinkedinOption,
+	GrTwitter,
 } from "react-icons/gr";
 const Footer = () => {
 	return (
@@ -25,7 +25,7 @@ const Footer = () => {
 					</ul>
 				</div>
 				<div>
-					<h4 className='font-bold text-teal-500'>Sharty</h4>
+					<h4 className='font-bold text-teal-500'>Sahty</h4>
 					<ul className='text-gray-400 text-sm leading-6'>
 						<li>About us </li>
 						<li>Our Team</li>
@@ -45,7 +45,7 @@ const Footer = () => {
 				<div>
 					<h4 className='font-bold text-teal-500'>Are you a doctor</h4>
 					<ul className='text-gray-400 text-sm leading-6'>
-						<li>Join Shaty Doctor </li>
+						<li>Join Sahty Doctor </li>
 					</ul>
 				</div>
 				<div className='social border-b-gray-500'>

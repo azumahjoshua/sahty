@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import { BsCalendarCheck, BsTelephone, BsStarFill } from "react-icons/bs";
 import { AiOutlineSmile } from "react-icons/ai";
-import { RiMessengerLine } from "react-icons/ri";
-import { FaAssistiveListeningSystems } from "react-icons/fa";
 import { BiCurrentLocation } from "react-icons/bi";
-import doctorsData from "./doctorsData.js";
+import { BsCalendarCheck, BsStarFill, BsTelephone } from "react-icons/bs";
+import { FaAssistiveListeningSystems } from "react-icons/fa";
 import { MdOutlineExpandMore } from "react-icons/md";
+import { RiMessengerLine } from "react-icons/ri";
+import { useParams } from "react-router-dom";
 import footerimg from "../../assets/footer.svg";
+import doctorsData from "./doctorsData.js";
 const SingleDoctor = ({ doctor }) => {
 	const [onlineStauts, setOnlineStauts] = useState(true);
-	const handleOnlineStatus = () => {
-		if (onlineStauts === "true") {
-			setOnlineStauts(true);
-		}
-		// setOnlineStauts()
-	};
+	// const handleOnlineStatus = () => {
+	// 	if (onlineStauts === "true") {
+	// 		setOnlineStauts(true);
+	// 	}
+	// 	setOnlineStauts();
+	// };
 	const { id } = useParams();
 	const docid = parseInt(id.split(":")[1]);
 	// console.log(typeof docid);
