@@ -186,7 +186,7 @@ const SingleDoctor = ({ doctor }) => {
 					</div>
 				</div>
 			</div>
-			<div className='footer mx-0 mt-72'>
+			<div className='footer mx-0 mt-20'>
 				<img src={footerimg} alt='operation' />
 			</div>
 		</div>

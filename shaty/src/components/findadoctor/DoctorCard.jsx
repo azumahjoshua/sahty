@@ -37,7 +37,7 @@ const DoctorCard = ({ doctor }) => {
 					</p>
 				</div>
 				<div className=''>
-					<button className='ml-24 px-2 mb-0 py-2  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300  bg-teal-500 text-white border border-white   rounded-sm shadow-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>
+					<button className='ml-20 px-2 mb-0 py-2  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300  bg-teal-500 text-white border border-white   rounded-sm shadow-md hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75'>
 						<Link to={`/findadoctor/dr/:${doctor.id}`}>View Profile</Link>
 					</button>
 					<div className='border-l-2 border-teal-50 pl-2 ml-2 my-8 mb-1'>

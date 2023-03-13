@@ -8,7 +8,6 @@ const SearchBar = ({ onSearch }) => {
 		setSearchText(text);
 		onSearch(text);
 	};
-	// console.log(searchText);
 	return (
 		<div className='mx-auto mt-10 ml-5 '>
 			<label className='flex flex-col'>

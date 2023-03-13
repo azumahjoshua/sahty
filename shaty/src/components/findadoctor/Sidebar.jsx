@@ -1,23 +1,16 @@
-import React, { useState } from "react";
-import doctorsData from "./doctorsData";
-import Filters from "./FiltersDoctors";
-import SearchBar from "./SearchBar";
+import React from "react";
+import { FaFilter } from "react-icons/fa";
+import FilterMenu from "./FilterMenu";
 
-const Sidebar = ({ filteredResults }) => {
-	const [searchText, setSearchText] = useState("");
-
-	const handleSearch = (text) => {
-		setSearchText(text);
-	};
-
-	filteredResults = doctorsData.filter((doctor) =>
-		doctor.name.toLowerCase().includes(searchText.toLowerCase())
-	);
+const Sidebar = ({ onSearch }) => {
 	return (
-		<div className='postion fixed hidden md:block  w-80 ml-0 pr-10 mt-10 h-full border-r-2 border-t-2'>
-			<SearchBar onSearch={handleSearch} />
-			<Filters />
-		</div>
+		<aside className='hidden lg:block ml-10 mt-10 col-span-3  w-80  rounded-lg justify-center bg-teal-400'>
+			<div className='flex  flex-row justify-start pl-20 py-4 font-bold leading-3 rounded-t-lg text-white gap-5 align-middle h-10 mt-0 bg-teal-800 w-full'>
+				<FaFilter />
+				<h2>Filter</h2>
+			</div>
+			<FilterMenu />
+		</aside>
 	);
 };
 
