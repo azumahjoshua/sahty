@@ -18,7 +18,7 @@ const FindADoctor = ({ filteredResults }) => {
 	const closeComponet = () => {
 		setIsOpen(!isOpen);
 	};
-	console.log(isOpen);
+	// console.log(isOpen);
 	// console.log(isOpen);
 	//
 	return (
@@ -57,7 +57,7 @@ const FindADoctor = ({ filteredResults }) => {
 						Filter
 					</button>
 				</div>
-				<div className='lg:flex lg:flex-row lg:justify-between  gap-5 '>
+				<div className='lg:flex lg:flex-row lg:justify-between  gap-x-20 '>
 					{/* Side Bar */}
 					<div className='w-20'>
 						<Sidebar filteredResults={filteredResults} />
