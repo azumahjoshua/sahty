@@ -1,10 +1,31 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
 const Signup = () => {
+	const [currentQuote, setCurrentQuote] = useState("");
+	const [currentAuthor, setCurrentAuthor] = useState("");
+	useEffect(() => {
+		getRandomeQuote();
+	});
+	const getRandomeQuote = () => {
+		const urlQuote = "https://api.goprogram.ai/inspiration";
+		axios
+			.get(urlQuote)
+			.then((response) => response)
+			.then((response) => {
+				// setCurrentQuote(response.data.q);
+				setCurrentQuote(response.data.quote);
+				setCurrentAuthor(response.data.author);
+			});
+		// console.log("Randome quote ");
+	};
 	return (
-		<div className='mx-10 pb-10 lg:w-96 md:mt-36 md:mb-10 mt-36 lg:mx-auto'>
+		<div className='mt-44 mx-2 pb-10 md:w-96 md:mt-36 md:mb-10 lg:flex lg:flex-cols lg:w-full justify-center gap-10'>
+			<div className='lg:w-[400px] mb-10 gap-16 text-4xl text-black  font-semibold leading-10   font-overpass w-78'>
+				"{currentQuote}"<h1 className='pt-5 text-2xl'>{currentAuthor}</h1>
+			</div>
 			<form className='flex flex-col' action=''>
 				<div className='h-full bg-teal-50 '>
 					<div className='h-10 bg-teal-700 py-2 text-white text-bold rounded-t-md text-center'>
