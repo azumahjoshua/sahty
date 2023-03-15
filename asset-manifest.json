@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shaty/static/css/main.e4a3ca0a.css",
-    "main.js": "/shaty/static/js/main.4b0ca7b6.js",
+    "main.css": "/shaty/static/css/main.3d38d5f9.css",
+    "main.js": "/shaty/static/js/main.3d1d0c89.js",
     "static/media/footer.svg": "/shaty/static/media/footer.5217d4fb28bbed5091340777d59f8525.svg",
     "static/media/Group 123.svg": "/shaty/static/media/Group 123.eb807ffeed15d47562bee5ada6657faf.svg",
     "static/media/doc3.svg": "/shaty/static/media/doc3.cdef8ec468463ad4175b253e8047f12a.svg",
@@ -20,11 +20,11 @@
     "static/media/pt.svg": "/shaty/static/media/pt.1bf9ea970fa471365458efead63f9839.svg",
     "static/media/bills.svg": "/shaty/static/media/bills.60d8054831f739e5ea234ef07b0fb359.svg",
     "index.html": "/shaty/index.html",
-    "main.e4a3ca0a.css.map": "/shaty/static/css/main.e4a3ca0a.css.map",
-    "main.4b0ca7b6.js.map": "/shaty/static/js/main.4b0ca7b6.js.map"
+    "main.3d38d5f9.css.map": "/shaty/static/css/main.3d38d5f9.css.map",
+    "main.3d1d0c89.js.map": "/shaty/static/js/main.3d1d0c89.js.map"
   },
   "entrypoints": [
-    "static/css/main.e4a3ca0a.css",
-    "static/js/main.4b0ca7b6.js"
+    "static/css/main.3d38d5f9.css",
+    "static/js/main.3d1d0c89.js"
   ]
 }
