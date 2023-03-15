@@ -7,7 +7,7 @@ import { MdOutlineExpandMore } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { useParams } from "react-router-dom";
 import footerimg from "../../assets/footer.svg";
-import doctorsData from "./doctorsData.js";
+import doctorsData from "../../data/doctorsData";
 const SingleDoctor = ({ doctor }) => {
 	const [onlineStauts, setOnlineStauts] = useState(true);
 	// const handleOnlineStatus = () => {

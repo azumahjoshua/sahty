@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaFilter, FaSortAmountDownAlt } from "react-icons/fa";
 import footerimg from "../../assets/footer.svg";
+import doctorsData from "../../data/doctorsData";
 import DoctorCard from "./DoctorCard";
-import doctorsData from "./doctorsData";
 import Filter from "./Filter";
 import Sidebar from "./Sidebar";
 
