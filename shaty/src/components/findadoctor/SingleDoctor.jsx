@@ -8,20 +8,47 @@ import { RiMessengerLine } from "react-icons/ri";
 import { useParams } from "react-router-dom";
 import footerimg from "../../assets/footer.svg";
 import doctorsData from "../../data/doctorsData";
-const SingleDoctor = ({ doctor }) => {
-	const [onlineStauts, setOnlineStauts] = useState(true);
-	// const handleOnlineStatus = () => {
-	// 	if (onlineStauts === "true") {
-	// 		setOnlineStauts(true);
-	// 	}
-	// 	setOnlineStauts();
-	// };
+const SingleDoctor = () => {
+	const [onlineStatus, setOnlineStatus] = useState(false);
+
 	const { id } = useParams();
 	const docid = parseInt(id.split(":")[1]);
 	// console.log(typeof docid);
 	const singledoctor = doctorsData.find((doctorid) => {
 		return docid === doctorid.id;
 	});
+	const handleOnlineStatus = () => {
+		const currentDateTime = new Date();
+		const currentDayOfWeek = currentDateTime.toLocaleDateString("en-US", {
+			weekday: "long",
+		});
+		// console.log(currentDateTime);
+		const currentHour = currentDateTime.getHours();
+		console.log(singledoctor.availability[currentDayOfWeek]);
+		const availability = singledoctor.availability[currentDayOfWeek];
+		if (availability === "Closed" || availability === "Not available") {
+			setOnlineStatus(false);
+		}
+		const [openTime, closeTime] = availability.split(" - ");
+		const [openHour, openMinutes] = openTime.split(":");
+		const [closeHour, closeMinutes] = closeTime.split(":");
+		if (
+			currentHour > parseInt(closeHour, 10) ||
+			(currentHour === parseInt(closeHour, 10) &&
+				currentDateTime.getMinutes() > parseInt(closeMinutes, 10))
+		) {
+			setOnlineStatus(false);
+		}
+		if (
+			currentHour < parseInt(openHour, 10) ||
+			(currentHour === parseInt(openHour, 10) &&
+				currentDateTime.getMinutes() < parseInt(openMinutes, 10))
+		) {
+			setOnlineStatus(false);
+		}
+		setOnlineStatus(true);
+	};
+
 	// console.log(singledoctor);
 	return (
 		<div>
@@ -55,7 +82,7 @@ const SingleDoctor = ({ doctor }) => {
 							<p className='text-center font-bold'>$100 -$150</p>
 						</div>
 						<div className='flex justify-center items-center mt-5'>
-							{onlineStauts ? (
+							{onlineStatus ? (
 								<div className='flex justify-center items-center w-20 h-10 bg-teal-400 rounded-sm'>
 									<span className='text-center mr-2 text-white'>Online</span>
 									<span className='relative flex  h-3 w-3'>
@@ -67,9 +94,9 @@ const SingleDoctor = ({ doctor }) => {
 								<div className='flex justify-center items-center w-20 h-10 bg-teal-400 rounded-sm'>
 									<span className='text-center mr-2 text-white'>Offline</span>
 									{/* <span class='relative flex  h-3 w-3'>
-									<span class='animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75'></span>
-									<span class='relative inline-flex rounded-full h-3 w-3 bg-red-500'></span>
-								</span> */}
+										<span class='animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75'></span>
+										<span class='relative inline-flex rounded-full h-3 w-3 bg-black'></span>
+									</span> */}
 								</div>
 							)}
 						</div>
@@ -114,14 +141,9 @@ const SingleDoctor = ({ doctor }) => {
 								Specialities
 							</h4>
 							<div className='flex flex-wrap gap-x-5 gap-y-3'>
-								{singledoctor.speciality.map((item, index) => (
-									<div
-										className='text-teal-500 w-32 px-2 rounded-sm bg-teal-100 flex justify-center items-center h-10 border-2 border-teal-200 '
-										key={index}
-									>
-										{item}
-									</div>
-								))}
+								<div className='text-teal-500 w-32 px-2 rounded-sm bg-teal-100 flex justify-center items-center h-10 border-2 border-teal-200 '>
+									{singledoctor.speciality}
+								</div>
 							</div>
 						</div>
 						<div className='mt-5'>

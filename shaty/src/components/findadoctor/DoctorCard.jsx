@@ -54,7 +54,7 @@ const DoctorCard = ({ doctor }) => {
 								Speciality
 							</h4>
 							<p className='text-teal-50 leading-6 text-base font-semibold mb-2'>
-								{doctor.speciality[0]}
+								{doctor.speciality}
 							</p>
 						</div>
 						<div>

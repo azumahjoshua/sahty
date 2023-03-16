@@ -18,7 +18,7 @@ const Speciality = ({ doctors }) => {
 		setStartDoctorIndex(newStartDoctorIndex);
 	};
 
-	console.log(previousDoctors);
+	// console.log(previousDoctors);
 	const nextDoctors = () => {
 		if (startDoctorIndex + (isMobile ? 1 : 3) >= doctors.length) {
 			return;
