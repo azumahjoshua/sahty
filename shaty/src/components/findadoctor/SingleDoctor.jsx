@@ -151,7 +151,7 @@ const SingleDoctor = () => {
 								Qualification
 							</h4>
 							<p className='text-sm items-start text-black  mb-2'>
-								Licecnces:
+								Licences:
 								<span className='text-sm text-gray-400 font-normal mt-5 ml-2'>
 									{singledoctor.degree}
 								</span>
@@ -168,9 +168,9 @@ const SingleDoctor = () => {
 								</span>
 							</p>
 							<p className='text-sm items-start text-black  mb-2'>
-								Exprience:
+								Experience:
 								<span className='text-sm text-gray-400 font-normal mt-5 ml-2'>
-									{singledoctor.experience}+ years Exprience
+									{singledoctor.experience}+ years Experience
 								</span>
 							</p>
 						</div>
