@@ -57,13 +57,13 @@ const FindADoctor = ({ filteredResults }) => {
 						Filter
 					</button>
 				</div>
-				<div className='lg:flex lg:flex-row lg:justify-between  gap-x-20 '>
+				<div className='lg:flex lg:flex-row lg:justify-between  gap-x-30 '>
 					{/* Side Bar */}
-					<div className='w-20'>
+					<div className=''>
 						<Sidebar filteredResults={filteredResults} />
 					</div>
 					{/* add a sort and filter button in mobile version here put in a diffent component later */}
-					<div className='flex flex-row  items-end justify-end  mt-5  mx-5'>
+					<div className='flex flex-row  items-end justify-end  mt-5  lg:mr-10'>
 						<div className='grid  gap-y-5 md:gap-y-2  grid-cols-1 md:grid-cols-2 lg:gap-x-5 lg:grid-cols-2 mt-5 md:gap-x-5 '>
 							{doctorsData.map((doctor, index) => {
 								return <DoctorCard key={index} doctor={doctor} />;

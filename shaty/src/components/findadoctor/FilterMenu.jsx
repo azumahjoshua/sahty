@@ -8,7 +8,7 @@ const FilterMenu = () => {
 	// console.log("FilterMenu: " + !isOpen);
 	return (
 		<>
-			<div className='filterMenu bg-teal-400 pb-10'>
+			<div className='filterMenu  h-full  bg-teal-400 pb-10'>
 				<div>
 					<SearchBar />
 				</div>
